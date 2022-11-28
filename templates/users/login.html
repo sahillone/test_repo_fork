@@ -1,0 +1,65 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="about_section layout_padding">
+    <div class="container">
+        <div class="content-section">
+            <form method="POST">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Log In</legend>
+                    {{ form|crispy }}
+                </fieldset>
+                <div class="form-group">
+                    <button class="btn btn-outline-dark" type="submit">Login</button>
+                    <small class="text-muted ml-2">
+                        <a href="#"> Forgot Password?</a>
+
+                    </small>
+                </div>
+            </form>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Need An Account? <a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+                </small>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer_section layout_padding margin_top_90">
+    <div class="container">
+        <div class="footer_logo"><a href="#"><img src="{% static 'images/footer-logo.png' %}"></a></div>
+        <div class="footer_menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">contact us</a></li>
+            </ul>
+        </div>
+        <div class="contact_menu">
+            <ul>
+                <li><a href="#"><img src="{% static 'images/call-icon.png' %}"></a></li>
+                <li><a href="#">Call : +01 1234567890</a></li>
+                <li><a href="#"><img src="{% static 'images/mail-icon.png' %}"></a></li>
+                <li><a href="#">demo@gmail.com</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- footer section end -->
+<!-- Javascript files-->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+<script src="{% static 'js/plugin.js' %}"></script>
+<!-- sidebar -->
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<!-- javascript -->
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+{% endblock content %}
